@@ -1,0 +1,79 @@
+<html>
+<head>
+	<style>
+		html, body {
+		height: 100%;
+		margin: 0;
+		}
+		.container {
+			display:flex;
+			flex-direction:row;
+		}
+		
+		.carousel-text {
+			display: none;
+		}
+		.d-block {
+			display: block;
+		}
+		.active {
+			transition: all .5s ease-in-out;
+		}
+		.hovered {
+			transform: translateY(-20px);
+			opacity: .5;
+		}
+		.hovered-out {
+			transform: translateY(0);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<div id="text"></div>
+		<div class="carousel hovered active" data-text="hello world">
+			<img src="images/img1.jpg" height="100" width="100">
+		</div>
+		<div class="carousel" data-text="hello earth">
+			<img src="images/img2.jpg" height="100" width="100">
+		</div>
+		<div class="carousel" data-text="hello filipins">
+			<img src="images/img3.jpg" height="100" width="100">
+		</div>
+		<div class="carousel" data-text="hello filipins">
+			<img src="images/img3.jpg" height="100" width="100">
+		</div>
+		<div class="carousel" data-text="hello filipins">
+			<img src="images/img3.jpg" height="100" width="100">
+		</div>
+		<div class="carousel" data-text="hello filipins">
+			<img src="images/img3.jpg" height="100" width="100">
+		</div>
+		<div class="carousel" data-text="hello filipins">
+			<img src="images/img3.jpg" height="100" width="100">
+		</div>
+		<div class="carousel" data-text="hello filipins">
+			<img src="images/img3.jpg" height="100" width="100">
+		</div>
+		<div class="carousel" data-text="hello filipins">
+			<img src="images/img3.jpg" height="100" width="100">
+		</div>
+		<div class="carousel" data-text="hello filipins">
+			<img src="images/img3.jpg" height="100" width="100">
+		</div>
+	</div>
+	
+</body>
+<script src="jquery.js">
+</script>
+<script>
+	$(function(){
+		$('#text').html($(".carousel").first().data('text'));
+		$(".carousel").hover(function(){
+			$(".carousel").removeClass('hovered');
+			$(this).addClass('hovered active');
+			$('#text').html($(this).data('text'));
+		});
+	});
+</script>
+</html>
